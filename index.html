@@ -3,332 +3,222 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Raj Silwal Portfolio</title>
+    <title>Raj Silwal | Portfolio</title>
     <link rel="stylesheet" href="index.css">
-
-    <!--For icons -->
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
     
-    
-    
-    <!--USE OF EMAILJS FROM BROUSER-->
-    <script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-    </script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script type="text/javascript">
        (function(){
-        emailjs.init({
-            publicKey: "Gx5SfLAFBShOT0-PG"
-           });
+        emailjs.init({ publicKey: "Gx5SfLAFBShOT0-PG" });
         })();
     </script>
-
-    <script src="script.js"></script>
-
-
-
-
-
+    <script src="script.js" defer></script>
 </head>
 <body>
 
-    
-    
-    <!-- Navbar -->
     <nav class="Navbar">
-        <div class="other-nav">
-                <div class="RajSilwal"
-                    <a href="RajSilwal"class=navitem>Raj Silwal </a>
-                </div>
-            <a href="#Home" class="navitem"><i class="fa-solid fa-house"></i>HOME</a>
-            <a href="#About" class="navitem"><i class="fa-solid fa-user"></i>ABOUT</a>
-            <a href="#Gallery" class="navitem"><i class="fa-solid fa-image"></i>GALLERY</a>
-            <a href="#Contact" class="navitem"><i class="fa-solid fa-envelope"></i>CONTACT</a>
+        <div class="nav-container">
+            <div class="logo">
+                <a href="#Home">Raj Silwal</a>
+            </div>
+            <div class="nav-links">
+                <a href="#Home" class="navitem"><i class="fa-solid fa-house"></i> Home</a>
+                <a href="#About" class="navitem"><i class="fa-solid fa-user"></i> About</a>
+                <a href="#Gallery" class="navitem"><i class="fa-solid fa-image"></i> Gallery</a>
+                <a href="#Contact" class="navitem"><i class="fa-solid fa-envelope"></i> Contact</a>
+            </div>
+            <a href="https://rspnepal.org/membership" target="_blank" class="btn-member">Become a Member</a>
         </div>
-
     </nav>
 
-    <section class="All" id="Home">
-
-        <section class="her" >
-            <h1 class="namaste">Namaste</h1>
-            <p class="subtitle">Welcome to my Digital World</p>
-        </section>
-
-
-
-
-        <!-- Hero Section -->
-        <section  class="hero">
-            <div class="shape">
-                <div class="circle"> </div>
-                <img src="photos/Raj Silwal PNG.png" alt="Raj Silwal" class="Raj">
-            </div>
-
-            <div class="Welcome">
-                <h1><b>Raj Silwal</b><br></h1><h2>Chairaman of RSP-Khairahani</h2>
-            </div>
-        </section>
-            <br>
-        <div class="Local">
-            <div class="text">
-            <h2><a href="https://rspnepal.org/membership" class="member" target="_blank">Become A Memember</a></h2>
-            </div>
-        </div>
-        
+    <section class="intro-screen">
+        <h1 class="namaste">Namaste</h1>
+        <p class="subtitle">Welcome to my Digital World</p>
     </section>
 
-
-
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-
-
-
-
-
-    <!-- About Me Section -->
-    <section id="About" class="about">
-        <div class="about-container">
-            <h2>About Me</h2>
-
-  
-                <p>
-                   Born in Chitwan and educated at Darbar High School, I learned the value of hard work early in life. At 20, I went to India and went on to successfully run
-                    a restaurant in Goa for over 18 years, gaining strong leadership and management experience.
-                    Returning to Nepal, I dedicated myself to social service. Today, as Chairman of RSP-Khairhani, I stand committed to honest leadership and a better future.</p>
+    <section class="hero" id="Home">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h3>Hello, I am</h3>
+                <h1>Raj Silwal</h1>
+                <h2>Chairman of RSP-Khairahani</h2>
+                <p>Dedicated to honest leadership and a better future for Chitwan.</p>
+                <div class="hero-buttons">
+                    <a href="#Contact" class="btn-primary">Contact Me</a>
+                    <a href="https://www.facebook.com/raj.silwal.9" target="_blank" class="btn-secondary"><i class="fa-brands fa-facebook-f"></i> Follow</a>
+                </div>
+            </div>
+            <div class="hero-image-container">
+                <div class="blob-bg"></div>
+                <img src="photos/Raj Silwal PNG.png" alt="Raj Silwal" class="hero-img">
+            </div>
         </div>
     </section>
 
-    <br>
-
-    <!-- Timeline -->
-     <div class="timeline">
-
-        <div class="timeline-item">
-                <span class="year">At Starting Days</span>
-                <p>Complete Education from Darbar High School.Studied Hotel Management Discovery Nepal Private Limited.Started his own Resturent In Goa, India for more than 15 years. A knowledgable person of Hotel Industry, International policy and System. Worked as Political Adviser in Goa.</p>
-        </div>
-
-         <div class="timeline-item">
-                <span class="year"> Back in Nepal</span>
-                <p>Work in Nepal. Chitwan District president of Contribution for Nation. Chairman of RSP-Khairahani, Chitwan. Talks about Political Issues in Khairahani.
-                    A Important figure in Chitwan Politics.</p>
-         </div>
-
-         <div class="timeline-item">
-                <span class="year">Working For Change</span>
-                <p>Joined RSP–Khairahani at its early stage with only a handful of members and played a role in its growth to a strong organization of
-                  <b>over 2,000</b>  members in Khairhani. </p>
-         </div>
-
-      </div>
-
-
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-
-      <!-- Team Container Of raj Silwal-->
-
-         <h2 class="Team-Heading">My Team</h2>
-      <div class="Team-all">
-
-      <section class="container">
-
-        <div class="card">
-            <div class="image">
-                <img src="photos/raj silwal profile.webp"alt="">
+    <section id="About" class="section-padding bg-light">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <p class="about-text">
+                   Born in Chitwan and educated at Durbar High School, I learned the value of hard work early in life. At 20, I traveled to India and successfully ran a restaurant in Goa for over 18 years, gaining strong leadership and management experience. Returning to Nepal, I dedicated myself to social service. Today, as Chairman of RSP-Khairhani, I stand committed to honest leadership and a better future.
+                </p>
             </div>
-            <h3>Raj Silwal</h3>
-            <p>Chairperson</p>
-       
-        </div>
 
-        <div class="card">
-            <div class="image">
-                <img src="photos/baburam.webp"alt="">
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">The Beginning</div>
+                    <div class="timeline-content">
+                        <h3>Education & Early Career</h3>
+                        <p>Completed education at Durbar High School. Studied Hotel Management at Discovery Nepal Pvt Ltd. Started a restaurant in Goa, India, running it successfully for over 15 years.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Return to Nepal</div>
+                    <div class="timeline-content">
+                        <h3>Social Service</h3>
+                        <p>Returned to Nepal to serve the community. Served as Chitwan District President of 'Contribution for Nation'. Became a key figure in local politics.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Present Day</div>
+                    <div class="timeline-content">
+                        <h3>RSP Khairahani</h3>
+                        <p>Joined RSP–Khairahani at its early stage. Played a pivotal role in growing the organization to over <strong>2,000 members</strong> in Khairhani.</p>
+                    </div>
+                </div>
             </div>
-            <h3>Baburam Payani</h3>
-            <p> Vice-Chairperson</p>
-       
         </div>
-
-        <div class="card">
-            <div class="image">
-                <img src="photos/uttam.webp"alt="">
-            </div>
-            <h3>Uttam Adhikari</h3>
-            <p> Secretary</p>
-       
-        </div>
-
-        <div class="card">
-            <div class="image">
-                <img src="photos/padam bahadur chuwan.webp"alt="">
-            </div>
-            <h3>Padam Bahadur Chauhan</h3>
-            <p>Treasurer</p>
-        
-        </div>
-        <div class="card">
-            <div class="image">
-                <img src="photos/bhawani.jpg"alt="">
-            </div>
-            <h3>Bhawani sharma</h3>
-            <p>vice secretary</p>
-        
-        </div>
-        <div class="card">
-            <div class="image">
-                <img src="photos/pradip sapkoto.webp"alt="">
-            </div>
-            <h3>Pradip Sapkota</h3>
-            <p>Member</p>
-        
-        </div>
-
-         <div class="card">
-            <div class="image">
-                <img src="photos/rajaram.webp"alt="">
-            </div>
-            <h3>Rajaram Karel</h3>
-            <p>Member</p>
-         </div>
-
-        <div class="card">
-            <div class="image">
-                <img src="photos/saraswati sapakota.webp"alt="">
-            </div>
-            <h3>Swarsawati Sapkota</h3>
-            <p>Member</p>       
-        </div>
-        <div class="card">
-            <div class="image">
-                <img src="photos/sulochana adhikari.webp"alt="">
-            </div>
-            <h3>Sulochana Adhikari</h3>
-            <p>Member</p>       
-        </div>
-        <div class="card">
-            <div class="image">
-                <img src="photos/sakuntala.jpg"alt="">
-            </div>
-            <h3>Sakuntala Adhikari</h3>
-            <p>Member</p>       
-        </div>
-        <div class="card">
-            <div class="image">
-                <img src="photos/mina adhikari.webp"alt="">
-            </div>
-            <h3>Mina Adhikari</h3>
-            <p>Member</p>       
-        </div>
-        <div class="card">
-            <div class="image">
-                <img src="photos/craj shrestha.jpg"alt="">
-            </div>
-            <h3>Chet Prasad Shrestha</h3>
-            <p>Member</p>       
-        </div>
-        <div class="card">
-            <div class="image">
-                <img src="photos/sita baral.jpg"alt="">
-            </div>
-            <h3>Sita Baral Ghimire</h3>
-            <p>Member</p>       
-        </div>
-      </section>
-      </div>
-
-
-
-
-
-
-    <!--Galary FOR photos-->
-    <section id="Gallery" class="gallery-preview">
-    <h2>Photo Gallery</h2>
-    <p>Some highlights from events and moments</p>
-
-    <div class="gallery-grid">
-
-        <div class="photo-card">
-            <img src="photos/Birthday special.jpg" alt="Event 1">
-            <h2>Birthday Meetings</h2>
-        </div>
-
-    </div>
-
-    <!-- View More Button -->
-
-    <a href="Gallary.html" class="view-more-btn">MORE</a>
-
     </section>
 
+    <section class="section-padding">
+        <div class="container">
+            <h2 class="section-title">My Team</h2>
+            <p class="section-subtitle">Working together for change</p>
+            
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="img-wrapper">
+                        <img src="photos/raj silwal profile.webp" alt="Raj Silwal">
+                    </div>
+                    <h3>Raj Silwal</h3>
+                    <p class="role">Chairperson</p>
+                </div>
 
+                <div class="team-card">
+                    <div class="img-wrapper">
+                        <img src="photos/baburam.webp" alt="Baburam Payani">
+                    </div>
+                    <h3>Baburam Payani</h3>
+                    <p class="role">Vice-Chairperson</p>
+                </div>
 
+                <div class="team-card">
+                    <div class="img-wrapper">
+                        <img src="photos/uttam.webp" alt="Uttam Adhikari">
+                    </div>
+                    <h3>Uttam Adhikari</h3>
+                    <p class="role">Secretary</p>
+                </div>
 
-
-    <SECTION id="Contact" class="contact-section">
-        <h2>Contact Me</h2>
-        <p class="paragraph">If you have any questions or would like to get in touch, feel free to reach out!</p>
-        <br>
-        <br>
-        <form class="contact-form" onsubmit="sendmail(event)">
-
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" placeholder="Your Name"  required>
+                <div class="team-card">
+                    <div class="img-wrapper">
+                        <img src="photos/padam bahadur chuwan.webp" alt="Padam Bahadur">
+                    </div>
+                    <h3>Padam Bahadur</h3>
+                    <p class="role">Treasurer</p>
+                </div>
+                 <div class="team-card">
+                    <div class="img-wrapper">
+                        <img src="photos/bhawani.jpg" alt="Bhawani sharma">
+                    </div>
+                    <h3>Bhawani Sharma</h3>
+                    <p class="role">Vice Secretary</p>
+                </div>
+                
+                <div class="team-card">
+                    <div class="img-wrapper">
+                        <img src="photos/pradip sapkoto.webp" alt="Pradip">
+                    </div>
+                    <h3>Pradip Sapkota</h3>
+                    <p class="role">Member</p>
+                </div>
             </div>
-
-            <div class="form-group">
-                <label for="email">E-mail</label>
-                <input type="email" id="email" placeholder="Your Email" required>
-            </div>
-
-            <div class="form-group">
-                <label for="subject">Subject</label>
-                <input type="text" id="subject" placeholder="Subject" required>
-            </div>
-
-            <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" placeholder="Write your message..." required></textarea>
-            </div>
-
-            <button type="submit" class="send-btn">Send</button>
-
-        </form>
-    </SECTION>
-
-
-
-
-<!-- Social Media Links -->
-        <div class="flex" style="gap:25px;">
-                    <a href="https://facebook.com/raj.silwal.9" target="_blank" class="btn-facebook"> <i class="fa-brands fa-facebook-f"> </i> Facebook </a>
         </div>
+    </section>
 
-        <br>
-        <br>
+    <section id="Gallery" class="section-padding bg-light">
+        <div class="container">
+            <h2 class="section-title">Photo Gallery</h2>
+            <p class="section-subtitle">Highlights from events and public moments</p>
 
+            <div class="gallery-preview-grid">
+                <div class="photo-card-preview">
+                    <img src="photos/Birthday special.jpg" alt="Event">
+                    <div class="overlay">
+                        <h3>Birthday Special</h3>
+                    </div>
+                </div>
+                 <div class="photo-card-preview">
+                    <img src="photos/Ravi.jpg" alt="Event">
+                    <div class="overlay">
+                        <h3>With Ravi Lamichhane</h3>
+                    </div>
+                </div>
+                 <div class="photo-card-preview">
+                    <img src="photos/Khairahani team.jpg" alt="Event">
+                    <div class="overlay">
+                        <h3>Khairahani Team</h3>
+                    </div>
+                </div>
+            </div>
 
+            <div class="center-btn">
+                <a href="Gallary.html" class="btn-primary">View Full Gallery</a>
+            </div>
+        </div>
+    </section>
 
-<footer class="footer">
-    <p>&copy; 2026 Raj Silwal. All rights reserved.</p>
-</footer>
+    <section id="Contact" class="section-padding">
+        <div class="container">
+            <h2 class="section-title">Contact Me</h2>
+            <div class="contact-wrapper">
+                <form class="contact-form" onsubmit="sendmail(event)">
+                    <div class="input-group">
+                        <input type="text" id="name" required>
+                        <label>Your Name</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" id="email" required>
+                        <label>Your Email</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" id="subject" required>
+                        <label>Subject</label>
+                    </div>
+                    <div class="input-group">
+                        <textarea id="message" required></textarea>
+                        <label>Message</label>
+                    </div>
+                    <button type="submit" class="btn-primary full-width">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
 
-<br>
-
+    <footer class="footer">
+        <div class="social-links">
+            <a href="https://facebook.com/raj.silwal.9" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+        </div>
+        <p>&copy; 2024 Raj Silwal. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>
-
-
