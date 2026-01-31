@@ -1,0 +1,185 @@
+
+
+/* Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: rgb(255, 255, 255);
+}
+
+/* Navbar */
+.Navbar {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color:rgb(0, 135, 219);
+}
+
+.Navbar .navitem {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 20px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.Navbar .navitem:hover,
+.Navbar .navitem.active {
+    color: #f39c12;
+}
+
+/* Gallery Section */
+.gallery-section {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.gallery-section h2 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+.gallery-section p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+/* Grid Layout */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+/* Photo Card */
+.photo-card {
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+
+/* Photo Frame */
+
+
+.photo-frame {
+    width: 100%;
+    height: 100%;
+    border: 6px solid #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.photo-card:hover .photo-frame {
+    box-shadow: 0 15px 30px rgba(255, 200, 0, 0.25);
+    transform: scale(0.9);
+}
+
+
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.photo-card:hover .photo-frame img {
+    transform: scale(1.1);
+}
+
+/* Photo Title */
+.photo-title {
+    margin-top: 15px;
+    font-size: 1.2rem;
+    color: #222;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.photo-card:hover .photo-title {
+    color: #ff9d00;
+}
+
+/* --- Updated Grid for 2 Columns --- */
+.gallery-grid {
+    display: grid;
+    /* This forces exactly 2 equal columns */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px;
+    max-width: 1000px; /* Limits the total width so it looks better on big screens */
+    margin: 0 auto;
+}
+
+/* --- Responsive fix for Mobile --- */
+@media (max-width: 600px) {
+    .gallery-grid {
+        grid-template-columns: 1fr; /* Switch to 1 column on small phones */
+    }
+}
+
+/* --- Photo Frame Fix --- */
+.photo-frame {
+    width: 100%;
+    height: 350px; /* Increased height since we only have 2 columns */
+    border: 6px solid #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This makes huge photos fit perfectly without stretching */
+    display: block;
+}
+
+/* balen photo personal edit */
+.balen{
+    width:100%;
+    height:700px;
+}
+.swarnim{
+    height:500px;
+    width:100%;
+}
+
+/* footer */
+
+.footer{
+    background-color:royalblue;
+    text-align:center;  
+    color:white;
+    border-radius: 30px;
+    padding:5px;
+}
+
+.flex{
+    display:flex;
+    justify-content:center;
+    text-decoration: none;
+
+}
+.btn-facebook{
+    padding:10px 20px;
+    border:2px solid rgb(0, 135, 219);
+    color:rgb(0, 135, 219);
+    text-decoration:none;
+    font-weight:bold;
+    border-radius:5px;
+}
+.btn-facebook:hover{
+    transform: scale(1.1)
+}
