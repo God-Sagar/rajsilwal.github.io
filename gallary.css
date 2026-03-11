@@ -1,93 +1,68 @@
-/* Import fonts and reset from index.css style concept */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+/* Gallery Page Specific Styles */
 
-:root {
-    --primary-color: #0066cc;
-    --text-dark: #333;
-    --bg-light: #f4f7f6;
+.gallery-page {
+    background-color: var(--bg-light); /* Matches homepage background */
+    min-height: 100vh;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-
-body {
-    background-color: var(--bg-light);
-}
-
-/* Reusing the Navbar style from Index (Essential for consistency) */
-.Navbar {
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-    background-color: var(--primary-color);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    Display:sticky;
-    top:0;
-}
-
-.Navbar .navitem {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 20px;
-    font-weight: 600;
-    opacity: 0.9;
-    transition: 0.3s;
-}
-
-.Navbar .navitem:hover,
-.Navbar .navitem.active {
-    opacity: 1;
-    color: #ffd700; /* Gold accent */
-}
-
-/* Gallery Section */
-.gallery-section {
-    max-width: 1200px;
-    margin: 50px auto;
-    padding: 0 20px;
+/* Reusing the Header Style from Homepage */
+.gallery-header {
+    padding: 100px 0 60px;
     text-align: center;
+    background: linear-gradient(135deg, #e9f1f7, #ffffff); /* Matches intro-screen */
 }
 
-.gallery-section h2 {
-    font-size: 2.5rem;
+.gallery-header h1 {
+    font-size: 3rem;
+    font-weight: 800;
     color: var(--primary-color);
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
 }
 
-.gallery-section p {
-    color: #666;
-    margin-bottom: 40px;
+.gallery-header p {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto;
 }
 
-/* Modern Masonry/Grid Layout */
+.divider {
+    height: 4px;
+    width: 60px;
+    background: var(--accent-color);
+    margin: 20px auto 0;
+    border-radius: 2px;
+}
+
+/* Improved Professional Grid */
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 25px;
+    gap: 30px;
+    padding: 20px 0;
 }
 
-/* Photo Card */
+/* Photo Card Design */
 .photo-card {
-    background: #fff;
+    background: var(--white);
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    box-shadow: var(--shadow);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #eee;
 }
 
 .photo-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
 .photo-frame {
     width: 100%;
-    height: 500px; /* Fixed height for uniformity */
+    aspect-ratio: 4 / 3;
     overflow: hidden;
+    background-color: #f0f0f0;
 }
 
 .photo-frame img {
@@ -101,51 +76,22 @@ body {
     transform: scale(1.1);
 }
 
-.photo-title {
-    padding: 15px;
-    font-size: 1.1rem;
-    color: #333;
-    font-weight: 600;
-    margin: 0;
-}
-
-/* Balen/Swarnim custom fixes removed in favor of object-fit: cover which handles this automatically */
-
-/* Footer */
-.footer {
-    background-color: var(--primary-color);
-    text-align: center;
-    color: white;
+.photo-card figcaption {
     padding: 20px;
-    margin-top: 50px;
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    font-weight: 600;
+    text-align: center;
+    border-top: 1px solid #f0f0f0;
 }
 
-.flex {
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
-}
-
-.btn-facebook {
-    padding: 10px 25px;
-    border: 2px solid var(--primary-color);
-    background: transparent;
-    color: var(--primary-color);
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-    transition: 0.3s;
-}
-
-.btn-facebook:hover {
-    background: var(--primary-color);
-    color: white;
-}
-
-/* Mobile */
-@media (max-width: 600px) {
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .gallery-header h1 {
+        font-size: 2.2rem;
+    }
     .gallery-grid {
         grid-template-columns: 1fr;
+        padding: 10px;
     }
 }
-
