@@ -147,3 +147,4 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("scroll", revealOnScroll);
     revealOnScroll(); // Run once on load
 });
+
