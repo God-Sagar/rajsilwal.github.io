@@ -266,6 +266,274 @@
         </div>
     </section>
 
+
+
+
+<section id="Public-Messages" class="section bg-light">
+    <div class="container" style="display: flex; flex-direction: column; align-items: center;">
+        
+        <div class="section-header">
+            <h2>Public Message Board</h2>
+            <p>तपाईंको अमूल्य सुझाव वा सन्देश यहाँ छोड्नुहोस्।</p>
+            <div class="divider"></div>
+        </div>
+
+        <style>
+            .messenger-box {
+                width: 100%;
+                max-width: 700px;
+                background: var(--bg-main);
+                border-radius: 16px;
+                box-shadow: var(--shadow-lg);
+                border: 1px solid var(--border-color);
+                display: flex;
+                flex-direction: column;
+                height: 600px; /* Fixed height for better alignment in the section */
+                overflow: hidden;
+            }
+
+            .messenger-header {
+                background: var(--primary-blue);
+                color: white;
+                padding: 18px 25px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .messenger-header h3 {
+                margin: 0;
+                font-size: 1.2rem;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .host-btn {
+                background: rgba(255,255,255,0.15);
+                padding: 6px 14px;
+                border-radius: 6px;
+                font-size: 0.8rem;
+                font-weight: 600;
+                cursor: pointer;
+                border: 1px solid rgba(255,255,255,0.3);
+                transition: var(--transition);
+            }
+
+            .host-btn.active {
+                background: #4CAF50;
+                border-color: #4CAF50;
+            }
+
+            .messenger-body {
+                flex: 1;
+                padding: 25px;
+                overflow-y: auto;
+                background: #f8fafc;
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .msg-card {
+                background: white;
+                border: 1px solid var(--border-color);
+                padding: 15px;
+                border-radius: 12px;
+                border-bottom-left-radius: 2px;
+                position: relative;
+                max-width: 85%;
+                align-self: flex-start;
+                animation: fadeUp 0.3s ease;
+            }
+
+            @keyframes fadeUp {
+                from { opacity: 0; transform: translateY(10px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+
+            .msg-meta {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 6px;
+                gap: 15px;
+            }
+
+            .msg-user { font-weight: 700; color: var(--primary-blue); font-size: 0.95rem; }
+            
+            .msg-del {
+                color: var(--accent-red);
+                cursor: pointer;
+                font-size: 0.8rem;
+                font-weight: 600;
+                display: none;
+                transition: var(--transition);
+            }
+            .msg-del:hover { text-decoration: underline; }
+
+            .is-owner .msg-del, .is-host .msg-del { display: block; }
+
+            .msg-text { color: var(--text-main); font-size: 1rem; line-height: 1.5; }
+            .msg-time { font-size: 0.75rem; color: var(--text-muted); margin-top: 8px; text-align: right; }
+
+            .messenger-footer {
+                padding: 20px;
+                background: white;
+                border-top: 1px solid var(--border-color);
+            }
+
+            .msg-input-group {
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .msg-row { display: flex; gap: 10px; }
+
+            .msg-field {
+                width: 100%;
+                padding: 12px 16px;
+                border: 1px solid var(--border-color);
+                border-radius: 8px;
+                font-family: inherit;
+                background: var(--bg-light);
+                transition: var(--transition);
+            }
+
+            .msg-field:focus {
+                outline: none;
+                border-color: var(--primary-blue);
+                background: white;
+                box-shadow: 0 0 0 3px rgba(10, 50, 115, 0.1);
+            }
+
+            .msg-send-btn {
+                background: var(--primary-blue);
+                color: white;
+                border: none;
+                padding: 0 25px;
+                border-radius: 8px;
+                font-weight: 700;
+                cursor: pointer;
+                transition: var(--transition);
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+
+            .msg-send-btn:hover {
+                background: var(--primary-blue-hover);
+                transform: translateY(-2px);
+            }
+        </style>
+
+        <div class="messenger-box">
+            <div class="messenger-header">
+                <h3><i class="fa-solid fa-comments"></i> सन्देश बोर्ड (Message Board)</h3>
+                <div id="host-toggle-btn" class="host-btn" onclick="toggleHostStatus()">Host Mode: OFF</div>
+            </div>
+            
+            <div class="messenger-body" id="chat-display">
+                </div>
+
+            <div class="messenger-footer">
+                <div class="msg-input-group">
+                    <input type="text" id="chat-user" class="msg-field" placeholder="तपाईंको नाम (Your Name)">
+                    <div class="msg-row">
+                        <input type="text" id="chat-text" class="msg-field" placeholder="सन्देश लेख्नुहोस् (Write Message...)">
+                        <button class="msg-send-btn" onclick="submitChatMessage()">
+                            Send <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        let hostStatus = false;
+        let chatData = JSON.parse(localStorage.getItem('rsp_messages')) || [];
+        
+        if (!localStorage.getItem('messenger_uid')) {
+            localStorage.setItem('messenger_uid', 'user_' + Math.random().toString(36).substr(2, 9));
+        }
+        const currentUid = localStorage.getItem('messenger_uid');
+
+        function toggleHostStatus() {
+            hostStatus = !hostStatus;
+            const btn = document.getElementById('host-toggle-btn');
+            btn.innerText = hostStatus ? "Host Mode: ON" : "Host Mode: OFF";
+            btn.classList.toggle('active');
+            refreshChat();
+        }
+
+        function submitChatMessage() {
+            const userName = document.getElementById('chat-user').value.trim();
+            const messageVal = document.getElementById('chat-text').value.trim();
+
+            if (!userName || !messageVal) {
+                alert("कृपया सबै जानकारी भर्नुहोस्।");
+                return;
+            }
+
+            const entry = {
+                id: Date.now(),
+                uid: currentUid,
+                name: userName,
+                text: messageVal,
+                timestamp: new Date().toLocaleTimeString('ne-NP', { hour: '2-digit', minute: '2-digit' })
+            };
+
+            chatData.push(entry);
+            localStorage.setItem('rsp_messages', JSON.stringify(chatData));
+            document.getElementById('chat-text').value = '';
+            refreshChat();
+        }
+
+        function removeEntry(id) {
+            if (confirm("के तपाईं यो सन्देश मेटाउन चाहनुहुन्छ?")) {
+                chatData = chatData.filter(i => i.id !== id);
+                localStorage.setItem('rsp_messages', JSON.stringify(chatData));
+                refreshChat();
+            }
+        }
+
+        function refreshChat() {
+            const container = document.getElementById('chat-display');
+            container.innerHTML = '';
+
+            if (chatData.length === 0) {
+                container.innerHTML = '<p style="text-align:center; color:#94a3b8; margin-top:20px;">कुनै सन्देश छैन। पहिलो सन्देश लेख्नुहोस्!</p>';
+            }
+
+            chatData.forEach(item => {
+                const wrap = document.createElement('div');
+                wrap.className = 'msg-card';
+                if (item.uid === currentUid) wrap.classList.add('is-owner');
+                if (hostStatus) wrap.classList.add('is-host');
+
+                wrap.innerHTML = `
+                    <div class="msg-meta">
+                        <span class="msg-user">${item.name}</span>
+                        <span class="msg-del" onclick="removeEntry(${item.id})"><i class="fa-solid fa-trash-can"></i> Delete</span>
+                    </div>
+                    <div class="msg-text">${item.text}</div>
+                    <div class="msg-time">${item.timestamp}</div>
+                `;
+                container.appendChild(wrap);
+            });
+            container.scrollTop = container.scrollHeight;
+        }
+
+        refreshChat();
+    </script>
+</section>
+
+
+
+
     <footer class="footer">
         <div class="container footer-content">
             <div class="footer-brand">
